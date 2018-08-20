@@ -32,13 +32,9 @@ namespace RichEditSectionContent {
                     MessageBox.Show("Current Paragraph In Section Index: " + (i + 1).ToString());
                     break;
                 }
-            }
+            }            
 
-            DocumentPosition currentSectionStart = currentSection.Paragraphs[0].Range.Start;
-            DocumentPosition currentSectionEnd = currentSection.Paragraphs[currentSection.Paragraphs.Count - 1].Range.End;
-
-            string currentSetionText = document.GetText(
-                document.CreateRange(currentSectionStart, currentSectionEnd.ToInt() - currentSectionStart.ToInt()));
+            string currentSetionText = document.GetText(currentSection.Range);
 
             MessageBox.Show("Current Setion Text (PlainText Format):\r\n" + currentSetionText);
         }

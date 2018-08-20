@@ -36,10 +36,7 @@ Namespace RichEditSectionContent
                 End If
             Next i
 
-            Dim currentSectionStart As DocumentPosition = currentSection.Paragraphs(0).Range.Start
-            Dim currentSectionEnd As DocumentPosition = currentSection.Paragraphs(currentSection.Paragraphs.Count - 1).Range.End
-
-            Dim currentSetionText As String = document.GetText(document.CreateRange(currentSectionStart, currentSectionEnd.ToInt() - currentSectionStart.ToInt()))
+            Dim currentSetionText As String = document.GetText(currentSection.Range)
 
             MessageBox.Show("Current Setion Text (PlainText Format):" & ControlChars.CrLf & currentSetionText)
         End Sub
